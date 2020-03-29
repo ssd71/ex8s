@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 )
 
 type requestBody struct {
@@ -44,5 +43,5 @@ func StartListener(updateHandler func(values []string)) {
 		w.Write([]byte("."))
 	})
 
-	log.Fatal(http.ListenAndServe(os.Getenv("PORT"), nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
