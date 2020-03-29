@@ -144,7 +144,7 @@ func UpdateOrInsert(data []string) error {
 	} else {
 		currentRow := resp.Values[len(resp.Values)-1]
 		for c := range data {
-			if currentRow[c] != data[c] {
+			if (c != 0) && (currentRow[c] != data[c]) {
 				isPresent = false
 			}
 		}
